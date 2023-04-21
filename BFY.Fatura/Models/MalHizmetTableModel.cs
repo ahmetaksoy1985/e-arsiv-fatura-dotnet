@@ -10,7 +10,7 @@ namespace BFY.Fatura.Models
     {
         public string malHizmet { get; set; }
         public int miktar { get; set; } = 1;
-        public string birim { get; set; } = "C62";
+        public string birim { get; set; }
         public decimal birimFiyat { get; set; }
         public decimal fiyat { get; set; }
         public int iskontoOrani { get; set; } = 0;
@@ -28,6 +28,7 @@ namespace BFY.Fatura.Models
         {
             malHizmet = invoiceDetailsItem.name;
             miktar = invoiceDetailsItem.quantity;
+            birim = invoiceDetailsItem.unit;
             birimFiyat = invoiceDetailsItem.unitPrice;
             fiyat = invoiceDetailsItem.price;
             malHizmetTutari = decimal.Round(invoiceDetailsItem.quantity * invoiceDetailsItem.unitPrice, 2, MidpointRounding.AwayFromZero);
