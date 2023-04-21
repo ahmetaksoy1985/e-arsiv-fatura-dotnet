@@ -43,12 +43,12 @@ namespace BFY.Fatura
                 saat = invoiceDetails.time,
                 vknTckn = invoiceDetails.taxIDOrTRID,
                 vergiDairesi = invoiceDetails.taxOffice,
-                matrah = invoiceDetails.grandTotal.ToString("F2").Replace(",", "."),
-                malhizmetToplamTutari = invoiceDetails.grandTotal.ToString("F2").Replace(",", "."),
-                hesaplanankdv = invoiceDetails.totalVAT.ToString("F2").Replace(",", "."),
-                vergilerToplami = invoiceDetails.totalVAT.ToString("F2").Replace(",", "."),
-                vergilerDahilToplamTutar = invoiceDetails.grandTotalInclVAT.ToString("F2").Replace(",", "."),
-                odenecekTutar = invoiceDetails.paymentTotal.ToString("F2").Replace(",", "."),
+                matrah = invoiceDetails.grandTotal,
+                malhizmetToplamTutari = invoiceDetails.grandTotal,
+                hesaplanankdv = invoiceDetails.totalVAT,
+                vergilerToplami = invoiceDetails.totalVAT,
+                vergilerDahilToplamTutar = invoiceDetails.grandTotalInclVAT,
+                odenecekTutar = invoiceDetails.paymentTotal,
                 bulvarcaddesokak = invoiceDetails.fullAddress
             };
 

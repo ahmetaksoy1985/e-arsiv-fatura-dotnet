@@ -11,15 +11,15 @@ namespace BFY.Fatura.Models
         public string malHizmet { get; set; }
         public int miktar { get; set; } = 1;
         public string birim { get; set; } = "C62";
-        public string birimFiyat { get; set; }
-        public string fiyat { get; set; }
+        public decimal birimFiyat { get; set; }
+        public decimal fiyat { get; set; }
         public int iskontoOrani { get; set; } = 0;
         public string iskontoTutari { get; set; } = "0";
         public string iskontoNedeni { get; set; } = "";
-        public string malHizmetTutari { get; set; }
-        public string kdvOrani { get; set; }
+        public decimal malHizmetTutari { get; set; }
+        public int kdvOrani { get; set; }
         public int vergiOrani { get; set; } = 0;
-        public string kdvTutari { get; set; }
+        public decimal kdvTutari { get; set; }
         public string vergininKdvTutari { get; set; } = "0";
         public string ozelMatrahTutari { get; set; } = "0";
         public string hesaplananotvtevkifatakatkisi { get; set; } = "0";
@@ -28,11 +28,11 @@ namespace BFY.Fatura.Models
         {
             malHizmet = invoiceDetailsItem.name;
             miktar = invoiceDetailsItem.quantity;
-            birimFiyat = decimal.Round(invoiceDetailsItem.unitPrice, 2).ToString().Replace(",",".");
-            fiyat = decimal.Round(invoiceDetailsItem.price, 2).ToString();
-            malHizmetTutari = decimal.Round(invoiceDetailsItem.quantity * invoiceDetailsItem.unitPrice, 2).ToString().Replace(",", ".");
-            kdvOrani = invoiceDetailsItem.VATRate.ToString().Replace(",", ".");
-            kdvTutari = decimal.Round(invoiceDetailsItem.VATAmount, 2).ToString().Replace(",", ".");
+            birimFiyat = invoiceDetailsItem.unitPrice;
+            fiyat = invoiceDetailsItem.price;
+            malHizmetTutari = decimal.Round(invoiceDetailsItem.quantity * invoiceDetailsItem.unitPrice, 2, MidpointRounding.AwayFromZero);
+            kdvOrani = invoiceDetailsItem.VATRate;
+            kdvTutari = decimal.Round(invoiceDetailsItem.VATAmount, 2, MidpointRounding.AwayFromZero);
         }
     }
 }

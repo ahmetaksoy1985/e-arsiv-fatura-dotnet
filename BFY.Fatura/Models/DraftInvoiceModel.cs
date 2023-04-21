@@ -38,13 +38,13 @@ namespace BFY.Fatura.Models
         public string vergiCesidi { get; set; } = " ";
         public List<MalHizmetTableModel> malHizmetTable { get; set; }
         public string tip { get; set; } = "İskonto";
-        public string matrah { get; set; }
-        public string malhizmetToplamTutari { get; set; }
+        public decimal matrah { get; set; }
+        public decimal malhizmetToplamTutari { get; set; }
         public string toplamIskonto { get; set; } = "0";
-        public string hesaplanankdv { get; set; }
-        public string vergilerToplami { get; set; }
-        public string vergilerDahilToplamTutar { get; set; }
-        public string odenecekTutar { get; set; }
+        public decimal hesaplanankdv { get; set; }
+        public decimal vergilerToplami { get; set; }
+        public decimal vergilerDahilToplamTutar { get; set; }
+        public decimal odenecekTutar { get; set; }
         public string not { get; set; }
         public string siparisNumarasi { get; set; } = "";
         public string siparisTarihi { get; set; } = "";
