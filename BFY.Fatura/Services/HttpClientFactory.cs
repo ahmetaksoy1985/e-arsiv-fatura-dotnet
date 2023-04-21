@@ -21,6 +21,7 @@ namespace BFY.Fatura.Services
             client.DefaultRequestHeaders.Add("sec-fetch-mode", "cors");
             client.DefaultRequestHeaders.Add("sec-fetch-site", "same-origin");
             client.DefaultRequestHeaders.Add("connection", "keep-alive");
+            client.DefaultRequestHeaders.Add("user-agent", "Test");
 
             return client;
         }
