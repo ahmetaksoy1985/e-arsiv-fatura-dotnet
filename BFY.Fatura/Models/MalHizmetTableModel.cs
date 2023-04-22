@@ -10,7 +10,7 @@ namespace BFY.Fatura.Models
     {
         public string malHizmet { get; set; }
         public int miktar { get; set; } = 1;
-        public string birim { get; set; }
+        public string birim { get; set; } = "C62";
         public decimal birimFiyat { get; set; }
         public decimal fiyat { get; set; }
         public int iskontoOrani { get; set; } = 0;

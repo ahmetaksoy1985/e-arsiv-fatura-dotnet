@@ -10,7 +10,7 @@ namespace BFY.Fatura.Models
     {
         public string faturaUuid { get; set; } = Guid.NewGuid().ToString();
         public string belgeNumarasi { get; set; } = "";
-        public string faturaTarihi { get; set; } = DateTime.Now.ToString("dd/MM/yyyy");
+        public string faturaTarihi { get; set; } = DateTime.Now.ToString("dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
         public string saat { get; set; } = DateTime.Now.ToString("HH:mm:ss");
         public string paraBirimi { get; set; } = "TRY";
         public string dovzTLkur { get; set; } = "0";
