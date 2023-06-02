@@ -92,7 +92,7 @@ namespace BFY.Fatura.Services
                 if (data != null)
                 {
                     var item = fields.RemoveAll(x => x.Key.CompareTo("jp") == 0);
-                    string serialized = JsonConvert.SerializeObject(data);
+                    string serialized = JsonConvert.SerializeObject(data, Formatting.Indented, new JsonSerializerSettings() { StringEscapeHandling = StringEscapeHandling.EscapeNonAscii });
                     serialized = (encodeUrl) ? System.Web.HttpUtility.UrlEncode(serialized) : serialized;
                     fields.Add(new KeyValuePair<string, string>("jp", serialized));
                 }
