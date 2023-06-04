@@ -178,10 +178,10 @@ namespace BFY.Fatura
             return await command.Dispatch();
         }
 
-        public async Task<GIBResponseModel<List<RecipientModel>>> GetRecipientDataByTaxIDOrTRID(long taxId)
+        public async Task<GIBResponseModel<RecipientModel>> GetRecipientDataByTaxIDOrTRID(long taxId)
         {
             var data = new { vknTcknn = taxId };
-            var command = new GetRecipientDataByIDCommand<GIBResponseModel<List<RecipientModel>>>(_configuration) { Data = data };
+            var command = new GetRecipientDataByIDCommand<GIBResponseModel<RecipientModel>>(_configuration) { Data = data };
 
             return await command.Dispatch();
         }
